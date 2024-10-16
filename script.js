@@ -214,6 +214,28 @@ function autoCollectEnergy() {
 // Call auto-collect every second
 setInterval(autoCollectEnergy, 1000);
 
+document.getElementById('colonize-button').addEventListener('click', function() {
+    if (energy >= planetColonizationCostEnergy && materials >= planetColonizationCostMaterials) {
+        energy -= planetColonizationCostEnergy;
+        materials -= planetColonizationCostMaterials;
+        planetsColonized++;
+        planetColonizationCostEnergy = Math.floor(planetColonizationCostEnergy * 3);
+        planetColonizationCostMaterials = Math.floor(planetColonizationCostMaterials * 2.8);
+        document.getElementById('colonize-button').textContent = `Colonize New Planet (Cost: ${planetColonizationCostEnergy} Energy, ${planetColonizationCostMaterials} Materials)`;
+        planetaryResources += 100; // Each planet provides unique resources
+
+        // Award Tech Points every 5 planets colonized
+        if (planetsColonized % 5 === 0) {
+            techPoints += 50;  // Reward 50 Tech Points (you can adjust the reward amount)
+            document.getElementById('tech-count').textContent = techPoints;  // Update Tech Points display
+            console.log(`Congrats! You've colonized ${planetsColonized} planets and gained 50 Tech Points.`);
+        }
+
+        updateDisplay();
+    }
+});
+
+
 // Random disaster every 20 seconds
 setInterval(triggerDisaster, 20000);
 
