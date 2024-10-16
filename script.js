@@ -226,7 +226,7 @@ document.getElementById('colonize-button').addEventListener('click', function() 
 
         // Award Tech Points every 5 planets colonized
         if (planetsColonized % 5 === 0) {
-            techPoints += 50;  // Reward 50 Tech Points (you can adjust the reward amount)
+            techPoints += 10;  // Reward 50 Tech Points (you can adjust the reward amount)
             document.getElementById('tech-count').textContent = techPoints;  // Update Tech Points display
             console.log(`Congrats! You've colonized ${planetsColonized} planets and gained 50 Tech Points.`);
         }
