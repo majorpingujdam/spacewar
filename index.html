@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stellar Empire Builder</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 20px;
+            position: relative;
+        }
+        .container {
+            width: 70%;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .objectives-container {
+            width: 25%;
+            text-align: left;
+            position: fixed;
+            right: 0;
+            top: 50px;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+        }
+        .disaster-container {
+            width: 20%;
+            text-align: left;
+            position: fixed;
+            right: 20px;
+            bottom: 50px;
+            padding: 15px;
+            background-color: #ffdddd;
+            border: 1px solid #ff0000;
+        }
+        .resource-display {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 10px;
+        }
+        .objective-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .objective-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .objective-list li {
+            margin-bottom: 10px;
+        }
+        .disaster-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #ff0000;
+        }
+        .disaster-log {
+            font-size: 16px;
+            color: #800000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Stellar Empire Builder</h1>
+        <p><strong>Your mission is to rebuild a space-faring civilization by gathering energy, researching technologies, and colonizing planets.</strong></p>
+
+        <div class="resource-display">
+            <p>Stellar Energy: <span id="energy-count">0</span></p>
+            <p>Materials: <span id="material-count">0</span></p>
+            <p>Tech Points: <span id="tech-count">0</span></p>
+            <p>Planetary Resources: <span id="planet-resource-count">0</span></p>
+        </div>
+
+        <button id="click-button">Gather Stellar Energy</button>
+        <button id="basic-auto-button">Buy Basic Solar Collector (Cost: 10 Energy)</button>
+        <p>Basic Collectors: <span id="basic-auto-count">0</span></p>
+
+        <button id="advanced-auto-button">Buy Advanced Solar Array (Cost: 100 Energy, 20 Materials)</button>
+        <p>Advanced Collectors: <span id="advanced-auto-count">0</span></p>
+
+        <button id="drone-button">Buy Energy Harvesting Drone (Cost: 1000 Energy, 100 Materials, 10 Tech Points)</button>
+        <p>Energy Drones: <span id="drone-count">0</span></p>
+
+        <button id="colonize-button">Colonize New Planet (Cost: 5000 Energy, 500 Materials)</button>
+        <p>Planets Colonized: <span id="planet-count">0</span></p>
+
+        <button id="tech-button">Research Advanced Tech (Cost: 200 Energy, 50 Tech Points)</button>
+        <p>Tech Level: <span id="tech-level">0</span></p>
+
+        <button id="defense-tech-button">Research Defense Tech (Cost: 200 Energy, 10 Tech Points)</button>
+        <p>Defense Level: <span id="defense-level">0</span></p>
+
+        <div id="story-section">
+            <h2>Milestone Story:</h2>
+            <p id="story-content">Your journey begins by collecting Stellar Energy and building the first structures of your interstellar empire.</p>
+        </div>
+    </div>
+
+    <div class="objectives-container">
+        <h2 class="objective-title">Objectives</h2>
+        <ul id="objective-list" class="objective-list">
+            <li>Collect 50 Stellar Energy</li>
+            <li>Build 1 Basic Solar Collector</li>
+            <li>Research Advanced Tech</li>
+        </ul>
+    </div>
+
+    <div class="disaster-container">
+        <h2 class="disaster-title">Disaster Log</h2>
+        <p id="disaster-log" class="disaster-log">No disasters yet.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
